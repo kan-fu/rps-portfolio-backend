@@ -1,5 +1,5 @@
-const PctChangeUS = require('../../../models/pctChangeUS')
-const middleware = require('../../../utils/middleware')
+const PctChangeUS = require('../../../../models/stock/pctChangeUS')
+const middleware = require('../../../../utils/middleware')
 const PctChangesUSRouter = require('express').Router()
 
 PctChangesUSRouter.get('/', async (req, res) => {

@@ -1,5 +1,5 @@
-const PortfolioUS = require('../../../models/portfolioUS')
-const middleware = require('../../../utils/middleware')
+const PortfolioUS = require('../../../../models/stock/portfolioUS')
+const middleware = require('../../../../utils/middleware')
 const portfoliosUSRouter = require('express').Router()
 
 portfoliosUSRouter.get('/', async (req, res) => {
@@ -12,6 +12,11 @@ portfoliosUSRouter.post('/', middleware.userExtractor, async (req, res) => {
 
   if (!(user && user.isAdmin)) {
     return res.status(401).json({ error: 'need admin to post' })
+  }
+
+  const documentLength = await PortfolioUS.count({})
+  if (documentLength > 1) {
+    return res.status(401).json({ error: 'can only post when empty!' })
   }
 
   const portfolio = new PortfolioUS({

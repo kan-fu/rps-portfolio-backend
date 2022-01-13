@@ -1,20 +1,20 @@
-const PctChange = require('../../../models/pctChange')
-const middleware = require('../../../utils/middleware')
-const PctChangesRouter = require('express').Router()
+const StockPctChange = require('../../../../models/stock/pctChange')
+const middleware = require('../../../../utils/middleware')
+const StockPctChangesRouter = require('express').Router()
 
-PctChangesRouter.get('/', async (req, res) => {
-  const PctChanges = await PctChange.find({})
-  return res.json(PctChanges.map((PctChange) => PctChange.toJSON()))
+StockPctChangesRouter.get('/', async (req, res) => {
+  const PctChanges = await StockPctChange.find({})
+  return res.json(PctChanges.map((StockPctChange) => StockPctChange.toJSON()))
 })
 
-PctChangesRouter.post('/', middleware.userExtractor, async (req, res) => {
+StockPctChangesRouter.post('/', middleware.userExtractor, async (req, res) => {
   const user = req.user
 
   if (!(user && user.isAdmin)) {
     return res.status(401).json({ error: 'need admin to post' })
   }
 
-  const pctChange = new PctChange({
+  const pctChange = new StockPctChange({
     date: req.body.date,
     D10: req.body.D10,
     D10GT: req.body.D10GT,
@@ -41,4 +41,4 @@ PctChangesRouter.post('/', middleware.userExtractor, async (req, res) => {
   res.json(savedPctChange.toJSON())
 })
 
-module.exports = PctChangesRouter
+module.exports = StockPctChangesRouter
