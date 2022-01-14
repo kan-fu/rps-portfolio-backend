@@ -2,10 +2,10 @@ const PctChange = require('../../../../models/etf/pctChangeBot')
 const middleware = require('../../../../utils/middleware')
 const PctChangesRouter = require('express').Router()
 
-PctChangesRouter.get('/', async (req, res) => {
-  const PctChanges = await PctChange.find({})
-  return res.json(PctChanges.map((PctChange) => PctChange.toJSON()))
-})
+// PctChangesRouter.get('/', async (req, res) => {
+//   const PctChanges = await PctChange.find({})
+//   return res.json(PctChanges.map((PctChange) => PctChange.toJSON()))
+// })
 
 PctChangesRouter.post('/', middleware.userExtractor, async (req, res) => {
   const user = req.user

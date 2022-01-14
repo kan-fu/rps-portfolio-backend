@@ -2,10 +2,10 @@ const PortfolioUS = require('../../../../models/stock/portfolioUS')
 const middleware = require('../../../../utils/middleware')
 const portfoliosUSRouter = require('express').Router()
 
-portfoliosUSRouter.get('/', async (req, res) => {
-  const portfolios = await PortfolioUS.find({})
-  return res.json(portfolios.map((portfolio) => portfolio.toJSON()))
-})
+// portfoliosUSRouter.get('/', async (req, res) => {
+//   const portfolios = await PortfolioUS.find({})
+//   return res.json(portfolios.map((portfolio) => portfolio.toJSON()))
+// })
 
 portfoliosUSRouter.post('/', middleware.userExtractor, async (req, res) => {
   const user = req.user

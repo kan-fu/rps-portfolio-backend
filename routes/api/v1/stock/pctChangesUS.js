@@ -2,10 +2,10 @@ const PctChangeUS = require('../../../../models/stock/pctChangeUS')
 const middleware = require('../../../../utils/middleware')
 const PctChangesUSRouter = require('express').Router()
 
-PctChangesUSRouter.get('/', async (req, res) => {
-  const PctChanges = await PctChangeUS.find({})
-  return res.json(PctChanges.map((PctChangeUS) => PctChangeUS.toJSON()))
-})
+// PctChangesUSRouter.get('/', async (req, res) => {
+//   const PctChanges = await PctChangeUS.find({})
+//   return res.json(PctChanges.map((PctChangeUS) => PctChangeUS.toJSON()))
+// })
 
 PctChangesUSRouter.post('/', middleware.userExtractor, async (req, res) => {
   const user = req.user
