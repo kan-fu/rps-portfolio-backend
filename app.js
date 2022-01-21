@@ -22,6 +22,7 @@ const etfBotPctChangesRouter = require('./routes/api/v1/etf/pctChangesBot')
 const etfTopPctChangesRouter = require('./routes/api/v1/etf/pctChangesTop')
 const etfBotPortfoliosRouter = require('./routes/api/v1/etf/portfoliosBot')
 const etfTopPortfoliosRouter = require('./routes/api/v1/etf/portfoliosTop')
+const netlifyRouter = require('./routes/api/v1/netlify')
 
 const middleware = require('./utils/middleware')
 
@@ -63,7 +64,7 @@ app.use('/api/v1/etf/pctChanges/bot', etfBotPctChangesRouter)
 app.use('/api/v1/etf/pctChanges/top', etfTopPctChangesRouter)
 app.use('/api/v1/etf/portfolios/bot', etfBotPortfoliosRouter)
 app.use('/api/v1/etf/portfolios/top', etfTopPortfoliosRouter)
-
+app.use('/api/v1/netlify', netlifyRouter)
 
 
 module.exports = app
