@@ -8,6 +8,9 @@ sinaRouter.get('/:stockList', function (req, res, next) {
   axios
     .get(`${SINA_API_URL}${req.params.stockList}`, {
       responseType: 'arraybuffer',
+      headers: {
+        Referer: 'finance.sina.com.cn',
+      },
     })
     .then((response) => {
       res.send(iconv.decode(response.data, 'gbk'))
