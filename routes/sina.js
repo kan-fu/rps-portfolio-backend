@@ -9,7 +9,8 @@ sinaRouter.get('/:stockList', function (req, res, next) {
     .get(`${SINA_API_URL}${req.params.stockList}`, {
       responseType: 'arraybuffer',
       headers: {
-        Referer: 'finance.sina.com.cn',
+        Referer:
+          'https://finance.sina.com.cn/realstock/company/sz000002/nc.shtml',
       },
     })
     .then((response) => {
