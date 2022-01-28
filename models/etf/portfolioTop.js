@@ -1,20 +1,18 @@
 const mongoose = require('mongoose')
-const uniqueValidator = require('mongoose-unique-validator')
 
 const portfolioSchema = new mongoose.Schema({
-  date: { type: Date, unique: true },
+  date: Date,
   rps250_1: String,
-  rps250_3: String,
+  rps250_2: String,
   rps120_1: String,
-  rps120_3: String,
+  rps120_2: String,
   rps50_1: String,
-  rps50_3: String,
+  rps50_2: String,
   rps5_1: String,
-  rps5_3: String,
+  rps5_2: String,
   rps120_250_1: String,
-  rps120_250_3: String,
+  rps120_250_2: String,
 })
-portfolioSchema.plugin(uniqueValidator)
 portfolioSchema.set('toJSON', {
   transform: (_, returnedObject) => {
     delete returnedObject._id

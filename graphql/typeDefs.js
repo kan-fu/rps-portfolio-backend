@@ -11,33 +11,33 @@ const typeDefs = gql`
   type ETFPctChange {
     date: String
     rps250_1: Float
-    rps250_3: Float
+    rps250_2: Float
     rps120_1: Float
-    rps120_3: Float
+    rps120_2: Float
     rps50_1: Float
-    rps50_3: Float
+    rps50_2: Float
     rps5_1: Float
-    rps5_3: Float
+    rps5_2: Float
     rps5_50_1: Float
-    rps5_50_3: Float
+    rps5_50_2: Float
     rps120_250_1: Float
-    rps120_250_3: Float
+    rps120_250_2: Float
   }
 
   type ETFPortfolio {
     date: String
     rps250_1: String
-    rps250_3: String
+    rps250_2: String
     rps120_1: String
-    rps120_3: String
+    rps120_2: String
     rps50_1: String
-    rps50_3: String
+    rps50_2: String
     rps5_1: String
-    rps5_3: String
+    rps5_2: String
     rps5_50_1: String
-    rps5_50_3: String
+    rps5_50_2: String
     rps120_250_1: String
-    rps120_250_3: String
+    rps120_250_2: String
   }
 
   type StockPctChange {

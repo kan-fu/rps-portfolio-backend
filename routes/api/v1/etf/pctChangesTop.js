@@ -17,15 +17,15 @@ PctChangesRouter.post('/', middleware.userExtractor, async (req, res) => {
   const pctChange = new PctChange({
     date: req.body.date,
     rps250_1: req.body.rps250_1,
-    rps250_3: req.body.rps250_3,
+    rps250_2: req.body.rps250_2,
     rps120_1: req.body.rps120_1,
-    rps120_3: req.body.rps120_3,
+    rps120_2: req.body.rps120_2,
     rps50_1: req.body.rps50_1,
-    rps50_3: req.body.rps50_3,
+    rps50_2: req.body.rps50_2,
     rps5_1: req.body.rps5_1,
-    rps5_3: req.body.rps5_3,
+    rps5_2: req.body.rps5_2,
     rps120_250_1: req.body.rps120_250_1,
-    rps120_250_3: req.body.rps120_250_3,
+    rps120_250_2: req.body.rps120_250_2,
   })
   const savedPctChange = await pctChange.save()
   res.json(savedPctChange.toJSON())
